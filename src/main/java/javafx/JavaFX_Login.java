@@ -18,6 +18,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.net.URL;
+
 public class JavaFX_Login extends Application {
 
     public static void main(String[] args) {
@@ -34,7 +36,7 @@ public class JavaFX_Login extends Application {
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         Text scenetitle = new Text("Welcome");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        scenetitle.setId("welcome-text");
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("User Name:");
@@ -56,21 +58,24 @@ public class JavaFX_Login extends Application {
         grid.add(hbBtn, 1, 4);
 
         final Text actiontarget = new Text();
+        actiontarget.setId("actiontarget");
         grid.add(actiontarget, 1, 6);
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent e) {
-                actiontarget.setFill(Color.FIREBRICK);
                 actiontarget.setText("Sign in button pressed");
             }
 
         });
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 400, 275);
         primaryStage.setScene(scene);
 
         primaryStage.setTitle("JavaFX Welcome");
+
+        // Não funcionou com getResource, por isso essa gambiarra
+        scene.getStylesheets().add("file://"+System.getProperty("user.dir")+"/src/main/java/javafx/login.css");
 
         primaryStage.show();
 
