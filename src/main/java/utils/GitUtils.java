@@ -32,7 +32,7 @@ public class GitUtils {
                 .findGitDir()
                 .build();
 
-        if (repository == null && createIfNotExists) {
+        if (repository.getBranch() == null && createIfNotExists) {
             repository = createRepository(path);
         }
 
