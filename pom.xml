@@ -19,6 +19,21 @@
             <artifactId>org.eclipse.jgit</artifactId>
             <version>4.3.0.201604071810-r</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xhtmlrenderer</groupId>
+            <artifactId>flying-saucer-core</artifactId>
+            <version>9.0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xhtmlrenderer</groupId>
+            <artifactId>flying-saucer-pdf</artifactId>
+            <version>9.0.8</version>
+        </dependency>
     </dependencies>
 
 </project>
