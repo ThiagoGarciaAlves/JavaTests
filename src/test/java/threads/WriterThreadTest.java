@@ -9,7 +9,7 @@ import java.util.List;
 public class WriterThreadTest {
 
     @Test
-    public void WriterThreadTest01() throws InterruptedException {
+    public void test001() throws InterruptedException {
 
         List<WriterThread> threadList = new ArrayList<WriterThread>();
 
