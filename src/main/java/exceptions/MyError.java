@@ -1,4 +1,12 @@
 package exceptions;
 
-public class MyError {
+public class MyError extends Error {
+
+    public MyError() {
+        super();
+    }
+
+    public MyError(Throwable cause) {
+        super(cause);
+    }
 }
