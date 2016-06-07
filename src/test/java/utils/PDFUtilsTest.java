@@ -27,7 +27,7 @@ public class PDFUtilsTest {
                 "</body>\n" +
                 "</html>";
 
-        String pdfPath = "/tmp/JavaTests/pdfTest.pdf";
+        String pdfPath = "/tmp/pdfTest.pdf";
 
         pdfUtils.createPdf(htmlContent, pdfPath);
 
