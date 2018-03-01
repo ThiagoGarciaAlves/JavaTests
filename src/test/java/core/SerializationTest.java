@@ -3,6 +3,9 @@ package core;
 import org.junit.Test;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.util.Map;
+import java.util.SortedMap;
 
 import static org.junit.Assert.assertTrue;
 
@@ -34,6 +37,16 @@ public class SerializationTest {
 
 		assertTrue(p2.getAge() == p.getAge());
 		assertTrue(p2.getName().equals(p.getName()));
+	}
+
+	@Test
+	public void byteArrayCharsetTest() {
+		String sp = "São Paulo";
+		byte[] sp_bytes = sp.getBytes();
+		SortedMap<String, Charset> charsets = Charset.availableCharsets();
+		for (Map.Entry<String, Charset> entry : charsets.entrySet()) {
+			System.out.printf("%s: %s%n", entry.getKey(), new String(sp_bytes, entry.getValue()));
+		}
 	}
 
 }
